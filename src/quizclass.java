@@ -4,23 +4,13 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.Timer;
 
+
 public class quizclass implements ActionListener{
-    String[] questions ={
-            "what is the capital of India ?",
-            "which of the following is used for printing in java?",
-            "who created java?","on which year java is invented ?",
-            "which company invented java?"
-    };
-    String[][] answers = {
-            {"New Delhi","Mumbai","Kolkata","Hyderabad"},
-            {"print","printf","cout","System.out.print"},
-            {"James Gosling","Steve jobs","Bill gates","Charles Babbage"},
-            {"1992","1996","1993","1990"},
-            {"moon micro systems","Apple","sun micro systems","Microsoft"}
-    };
-    char [] selections ={
-            'A','D','A','B','C'
-    };
+    int numberofques= 5;
+    public String[] questions =new String[numberofques];
+    String[][] answers = new String[numberofques][4];
+    char [] selections =new char[numberofques];
+
     char guess;
     char ans;
     int index;
@@ -43,7 +33,7 @@ public class quizclass implements ActionListener{
     JLabel secondlabel = new JLabel();
     JTextField numright = new JTextField();
     JTextField percentage = new JTextField();
-
+    boolean yes  =true;
     Timer time = new Timer(1000, new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -56,6 +46,12 @@ public class quizclass implements ActionListener{
         }
     });
      public quizclass(){
+
+         questoions ques = new questoions();
+         if(yes == true){
+             ques.setpaper(questions,answers,selections,numberofques);
+             yes = false;
+         }
          frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
          frame.setSize(750,750);
          frame.getContentPane().setBackground(new Color(55,55,55));
@@ -111,28 +107,28 @@ public class quizclass implements ActionListener{
          buttond.setText("D");
          frame.add(buttond);
 
-         anslabela.setBounds(125,160,500,100);
+         anslabela.setBounds(125,160,600,100);
          anslabela.setBackground(Color.BLACK);
          anslabela.setForeground(Color.GREEN);
-         anslabela.setFont(new Font("Ink Free",Font.PLAIN,35));
+         anslabela.setFont(new Font("Ink Free",Font.PLAIN,25));
          frame.add(anslabela);
 
-         anslabelb.setBounds(125,270,500,100);
+         anslabelb.setBounds(125,270,600,100);
          anslabelb.setBackground(Color.BLACK);
          anslabelb.setForeground(Color.GREEN);
-         anslabelb.setFont(new Font("Ink Free",Font.PLAIN,35));
+          anslabelb.setFont(new Font("Ink Free",Font.PLAIN,25));
          frame.add(anslabelb);
 
-         anslabelc.setBounds(125,380,500,100);
+         anslabelc.setBounds(125,380,600,100);
          anslabelc.setBackground(Color.BLACK);
          anslabelc.setForeground(Color.GREEN);
-         anslabelc.setFont(new Font("Ink Free",Font.PLAIN,35));
+         anslabelc.setFont(new Font("Ink Free",Font.PLAIN,25));
          frame.add(anslabelc);
 
-         anslabeld.setBounds(125,490,500,100);
+         anslabeld.setBounds(125,490,600,100);
          anslabeld.setBackground(Color.BLACK);
          anslabeld.setForeground(Color.GREEN);
-         anslabeld.setFont(new Font("Ink Free",Font.PLAIN,35));
+         anslabeld.setFont(new Font("Ink Free",Font.PLAIN,25));
          frame.add(anslabeld);
 
          secondlabel.setBounds(550,610,100,100);
