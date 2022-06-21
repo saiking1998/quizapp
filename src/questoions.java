@@ -20,7 +20,7 @@ public class questoions {
             "What is the extension of compiled java classes?",
             "Which exception is thrown when java is out of memory?"
 
-            };
+    };
     protected String[][] mainans ={
             {"New Delhi","Mumbai","Kolkata","Hyderabad"},
             {"print","printf","cout","System.out.print"},
@@ -42,11 +42,11 @@ public class questoions {
             {"MemoryError","OutOfMemoryError","MemoryOutOfBoundsException","MemoryFullException"}
 
 
-         };
+    };
     protected char[]  mainselections= {
             'A','D','A','B','C','B','C','D','D','C','B','B','B','C','B'
     };
-        public void setpaper(String[] ques,String[][]ans,char[] opt,int noof){
+    public void setpaper(String[] ques,String[][]ans,char[] opt,int noof){
         HashMap<Integer,Integer> prev = new HashMap<>();
         int n= 0;
         int idx=0;
